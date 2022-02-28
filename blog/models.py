@@ -11,6 +11,9 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f'{self.title}'
+        return f'[{self.pk}]{self.title}'
+
+    def get_absolute_url(self):
+        return f'/blog/{self.pk}/'
 
         # f'[{self.pk}]self.title}' --> 게시글 번호 추가
