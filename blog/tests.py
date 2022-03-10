@@ -1,7 +1,7 @@
 from django.test import TestCase, Client
 from bs4 import BeautifulSoup
 from django.contrib.auth.models import User
-from .models import Post, Category, Tag
+from .models import Post, Category, Tag, Comment
 
 
 # Create your tests here.
@@ -43,6 +43,12 @@ class TestView(TestCase):
         )
         self.post_003.tags.add(self.tag_python_kor)
         self.post_003.tags.add(self.tag_python)
+
+        self.comment_001 = Comment.objects.create(
+            post= self.post_001,
+            author= self.user_obama,
+            content= '첫 번째 댓글입니다.'
+        )
 
     def navbar_test(self, soup):
         navbar = soup.nav
@@ -175,6 +181,12 @@ class TestView(TestCase):
 
         # 2.6. 첫 번째 포스트의 내용(content)이 포스트 영역에 있다.
         self.assertIn(self.post_001.content, post_area.text)
+
+        #comment area
+        comments_area = soup.find('div', id='comment-area')
+        comment_001_area = comments_area.find('div', id='comment-1')
+        self.assertIn(self.comment_001.author.username, comment_001_area.text)
+        self.assertIn(self.comment_001.content, comment_001_area.text)
 
     def test_create_post(self):
         # 로그인 하지 않으면 status code가 200이면 안된다!
