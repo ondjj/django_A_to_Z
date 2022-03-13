@@ -1,18 +1,189 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>개발자 전창준입니다</title>
+    <title>About 전창준</title>
+
+    <link rel="stylesheet" href="{% static 'blog/bootstrap/bootstrap.min.css' %}" media="screen">
+
+    <link rel="stylesheet" href="{% static 'single_pages/css/about_me.css' %}" media="screen">
+
+    <script src="https://kit.fontawesome.com/f44e309fde.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
-<nav>
-    <a href="/blog/">Blog</a>
-    <a href="/about_me">About_me</a>
-</nav>
 
-<h1>안녕하세요. 전창준입니다</h1>
-<h2>이력서</h2>
-<h2>Portfolio</h2>
-<h3>아직 공사중입니다.</h3>
+{% include 'blog/navbar.html' %}
+
+<section>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-8">
+                <h1>안녕하세요. 전창준입니다.</h1>
+                <br/>
+                <p class="lead">
+                    음악과 컴퓨터를 좋아하고 최근 운동을 시작했습니다.<br/>
+                    초경량 비행장치 무인 멀티콥터를 다뤘고, 지금은 프로그래밍 공부를 합니다.
+                </p>
+
+                <ul>
+                    <li>WORK EXPERIENCE</li>
+                    <ul>
+                        <li>드론 회사 - 정비/교육 (2018.02 ~ 2021.04)</li>
+                    </ul>
+
+                    <li>EDUCATION</li>
+                    <ul>
+                        <li>한국 방송통신 대학교 첨단 공학부 재학(2019 ~ )</li>
+                        <li>광주 인공지능 사관학교 교육 수료(2021.12)</li>
+                        <li>초경량 비행장치 무인 멀티콥터 실기 평가자(2020.12)</li>
+                        <li>초경량 비행장치 무인 멀티콥터 교육 교관(2019.07)</li>
+                        <li>DJI 정비 자격(2018.08)</li>
+                    </ul>
+                </ul>
+            </div>
+            <div class="col-lg-4">
+                <img class="img-fluid" src="{% static 'single_pages/images/iam.png' %}">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-light margin-for-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>PORTFOLIO</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card" data-toggle="modal" data-target="#pragmatic">
+                    <img class="card-img-top" src="{% static 'single_pages/images/123.png' %}" height="150px">
+                    <div class="card-body">
+                        <h5 class="card-title">Django를 활용한 웹 사이트 만들기</h5>
+                        <p>Python, Django, Nginx, Doker, AWS로 만들어진 사이트입니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card" data-toggle="modal" data-target="#python_web">
+                    <img class="card-img-top" src="{% static 'single_pages/images/1233.png' %}" height="175px">
+                    <div class="card-body">
+                        <h5 class="card-title">Django를 활용한 두 번째 웹 사이트</h5>
+                        <p>Python, Django로 만들어진 사이트입니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card" data-toggle="modal" data-target="#autolabel">
+                    <img class="card-img-top" src="{% static 'single_pages/images/oo.jpg' %}" height="150px">
+                    <div class="card-body">
+                        <h5 class="card-title">OpenCV를 활용한 영상 주석 처리 작업</h5>
+                        <p>OpenCV를 사용, 좌표값에 맞춰 주석 처리 한 프로젝트</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="pragmatic" tabindex="-1" role="dialog" aria-labelledby="pycon2017ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="pycon2017ModalLabel">Python-Django로 웹 사이트 만들기</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <img class="img-fluid" src="{% static 'single_pages/images/123.png' %}">
+                    </div>
+                    <div class="col-lg-5">
+                        <p>광주 인공지능 사관학교 교육 과정 - Pragmetic 웹 사이트 만들기</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="python_web" tabindex="-1" role="dialog" aria-labelledby="inflearnDjangoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id=" inflearnDjangoModalLabel">Django를 활용한 쉽고 빠른 웹 개발 파이썬 웹 프로그래밍</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <img class="img-fluid" src="{% static 'single_pages/images/1233.png' %}">
+                    </div>
+                    <div class="col-lg-5">
+                        <p>Django를 사용해 웹을 구축하는 기술 서적입니다.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="autolabel" tabindex="-1" role="dialog" aria-labelledby="automationPythonModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id=" automationPythonModalLabel">광주 인공지능 사관학교 - 프로젝트</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <img class="img-fluid" src="{% static 'single_pages/images/oo.jpg' %}">
+                    </div>
+                    <div class="col-lg-5">
+                        <p>기업 연계 프로젝트 첫 번째 과제입니다. OpenCV를 사용해 객체를 추적하여 주석처리하는 작업을 진행했습니다.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fixed-bottom">
+    {% include 'blog/footer.html' %}
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
 </body>
 </html>
