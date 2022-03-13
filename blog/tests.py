@@ -419,7 +419,7 @@ class TestView(TestCase):
         self.assertIn('Delete', really_delete_btn_002.text)
         self.assertEqual(
             really_delete_btn_002.attrs['href'],
-            '/blog/delete_comment/2/'
+            '/blog/delete_comment/2'
         )
 
         response = self.client.get('/blog/delete_comment/2/', follow=True)
