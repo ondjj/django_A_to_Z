@@ -3,7 +3,7 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import get_object_or_404
 from .models import Post, Category, Tag, Comment
-from .forms import CommentForm, ReplyForm
+from .forms import CommentForm
 from django.core.exceptions import PermissionDenied
 from django.utils.text import slugify
 from django.db.models import Q

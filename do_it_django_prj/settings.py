@@ -54,7 +54,6 @@ INSTALLED_APPS = [
     'adminlte3',
     'adminlte3_theme',
 
-    'chaser.apps.ChaserConfig',
     'blog.apps.BlogConfig',
     'single_pages.apps.SinglePagesConfig',
 ]
