@@ -50,7 +50,11 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+    'mptt',
+    'adminlte3',
+    'adminlte3_theme',
 
+    'chaser.apps.ChaserConfig',
     'blog.apps.BlogConfig',
     'single_pages.apps.SinglePagesConfig',
 ]
@@ -159,3 +163,5 @@ SITE_ID = 1
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 LOGIN_REDIRECT_URL = '/blog/'
+
+MPTT_ADMIN_LEVEL_INDENT = 5

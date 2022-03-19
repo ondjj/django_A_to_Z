@@ -116,7 +116,25 @@
                      data-toggle="modal" data-target="#deleteCommentModal-{{ comment.pk }}">
                       delete
                   </a>
+                  <a role="button"
+                      class="btn btn-sm btn-primary"
+                      id="reply-{{ reply.pk }}-reply-modal-btn"
+                      href="/<int:pk>/new_reply/">
+                       reply
+                   </a>
               </div>
+            {% else %}
+              {% if user.is_authenticated %}
+                  <div class="float-right">
+                      <a role="button"
+                         class="btn btn-sm btn-info"
+                         id="comment-{{ comment.pk }}-reply-modal-btn"
+                         href="/blog/update_comment/{{ comment.pk }}/">
+                          reply
+                      </a>
+                  </div>
+              {% endif %}
+
 
               <!-- Modal -->
               <div class="modal fade" id="deleteCommentModal-{{ comment.pk }}" tabindex="-1"

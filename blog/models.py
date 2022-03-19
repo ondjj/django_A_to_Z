@@ -83,4 +83,25 @@ class Comment(models.Model):
         if self.author.socialaccount_set.exists():
             return self.author.socialaccount_set.first().getavatar_url()
         else:
-            return f'	https://doitdjango.com/avatar/id/673/6953ba6efe9a8bde/svg/jcjk0302@gmail.com'
+            return f'https://doitdjango.com/avatar/id/673/6953ba6efe9a8bde/svg/jcjk0302@gmail.com'
+
+
+class Reply(models.Model):
+    comment = models.ForeignKey(Comment, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    modified_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f'{self.author}::{self.content}'
+
+    def get_absolute_url(self):
+        return f'{self.comment.get_absolute_url()}#reply-{self.pk}'
+
+    def get_avatar_url(self):
+        if self.author.socialaccount_set.exists():
+            return self.author.socialaccount_set.first().getavatar_url()
+        else:
+            return f'https://doitdjango.com/avatar/id/673/6953ba6efe9a8bde/svg/jcjk0302@gmail.com'
+
