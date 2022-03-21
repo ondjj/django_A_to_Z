@@ -11,23 +11,6 @@ from django.db.models import Q
 
 # Create your views here.
 
-def new_reply(request, pk):
-    if request.user.is_authenticated:
-        post = get_object_or_404(Post, pk=pk)
-
-        if request.method == 'POST':
-            reply_form = ReplyForm(request.POST)
-            if reply_form.is_valid():
-                reply = reply_form.save(commit=False)
-                reply.post = post
-                reply.author = request.user
-                reply.save()
-                return redirect(reply.get_absolute_url())
-        else:
-            return redirect(post.get_absolute_url())
-    else:
-        raise PermissionDenied
-
 
 def new_comment(request, pk):
     if request.user.is_authenticated:
