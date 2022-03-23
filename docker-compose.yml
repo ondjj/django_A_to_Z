@@ -40,4 +40,10 @@ services:
     env_file:
       - ./.env.prod.db
 volumes:
+<<<<<<< HEAD
   postgres_data:
+=======
+  postgres_data:
+  static_volume:
+  media_volume:
+>>>>>>> 4514e84b81911b117e6690161d581b27f3823409
