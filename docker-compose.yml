@@ -2,6 +2,7 @@ version: '3'
 
 services:
 <<<<<<< HEAD
+<<<<<<< HEAD
   nginx:
     build: ./nginx
     volumes:
@@ -20,6 +21,8 @@ services:
     volumes:
       - ./data/certbot/conf:/etc/letsencrypt
       - ./data/certbot/www:/var/www/certbot
+=======
+>>>>>>> parent of 2647f64 (Nginx 적용하기)
 =======
 >>>>>>> parent of 2647f64 (Nginx 적용하기)
   web:
@@ -41,9 +44,13 @@ services:
       - ./.env.prod.db
 volumes:
 <<<<<<< HEAD
+<<<<<<< HEAD
   postgres_data:
 =======
   postgres_data:
   static_volume:
   media_volume:
 >>>>>>> 4514e84b81911b117e6690161d581b27f3823409
+=======
+  postgres_data:
+>>>>>>> parent of 2647f64 (Nginx 적용하기)
